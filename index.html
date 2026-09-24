@@ -1,324 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UrbanRide Skateboards</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --skate-red: #e63946;
-            --skate-orange: #f4a261;
-            --skate-yellow: #e9c46a;
-            --urban-grey: #2a2a2a;
-            --concrete: #cccccc;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--concrete);
-            color: var(--urban-grey);
-        }
-        .navbar {
-            background-color: var(--urban-grey);
-        }
-        .navbar-brand, .nav-link {
-            color: var(--skate-yellow) !important;
-            font-weight: bold;
-        }
-        .hero {
-            background: url('/api/placeholder/1200/800') center/cover no-repeat;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(230,57,70,0.7), rgba(244,162,97,0.7));
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 3px 3px 0px var(--skate-red);
-        }
-        .btn-skate {
-            background-color: var(--skate-yellow);
-            border: none;
-            color: var(--urban-grey);
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-skate::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: all 0.5s ease;
-        }
-        .btn-skate:hover::before {
-            left: 100%;
-        }
-        .btn-skate:hover {
-            background-color: var(--skate-orange);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .product-card {
-            background-color: white;
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .product-card img {
-            transition: all 0.3s ease;
-        }
-        .product-card:hover img {
-            transform: scale(1.1);
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding: 0 20px;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--skate-red);
-        }
-        .section-title::before, .section-title::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 50px;
-            height: 4px;
-            background-color: var(--skate-red);
-        }
-        .section-title::before {
-            left: -60px;
-        }
-        .section-title::after {
-            right: -60px;
-        }
-        .skate-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .category-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .category-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--skate-red), var(--skate-orange), var(--skate-yellow));
-        }
-        .category-card-content {
-            padding: 20px;
-        }
-        .scroll-animation {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-        .scroll-animation.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #about {
-            background: url('/api/placeholder/1200/800') center/cover no-repeat fixed;
-            position: relative;
-            color: white;
-        }
-        #about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(42,42,42,0.8);
-        }
-        .about-content {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanRide Skateboards · Ride the Urban Wave</title>
+  <meta name="description" content="UrbanRide Skateboards: hand-pressed maple decks, trucks, wheels and gear built by skaters for the street, the park and the city cruise.">
+  <meta name="theme-color" content="#0b0b0e">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">UrbanRide</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#featured">Decks</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#categories">Gear</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero d-flex align-items-center">
-        <div class="container text-center hero-content">
-            <h1 class="mb-4 text-white">Ride the Urban Wave</h1>
-            <p class="lead mb-4 text-white">Custom decks for every street and park</p>
-            <a href="#featured" class="btn btn-lg btn-skate">Shred Now</a>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top ur-nav" aria-label="Main">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="20" cy="20" r="7" fill="currentColor"/></svg>
+        <span>URBAN<b>RIDE</b></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-bar"></span><span class="toggler-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#featured">Decks</a></li>
+          <li class="nav-item"><a class="nav-link" href="#finder">Deck Finder</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Gear</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Crew</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-ur btn-ur-sm" href="#featured">Shop now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="sticker sticker-yellow reveal">Drop 07 · Fall collection</span>
+            <h1 class="hero-title reveal">
+              <span class="line">Ride the</span>
+              <span class="line outline">Urban</span>
+              <span class="line grad">Wave.</span>
+            </h1>
+            <p class="hero-lead reveal">Hand-pressed maple decks, trucks and wheels built by skaters who actually skate. Street, park or city cruise, we've got your setup.</p>
+            <div class="d-flex flex-wrap gap-3 reveal">
+              <a href="#featured" class="btn btn-ur btn-lg"><span>Shred now</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#finder" class="btn btn-ur-ghost btn-lg">Find your deck</a>
+            </div>
+            <ul class="hero-stats reveal" aria-label="UrbanRide in numbers">
+              <li><b class="count" data-to="7">0</b><span>ply canadian maple</span></li>
+              <li><b class="count" data-to="12">0</b><span>years in the streets</span></li>
+              <li><b class="count" data-to="40" data-suffix="k">0</b><span>riders rolling</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-visual tilt" data-tilt>
+              <!-- IMAGE SLOT: assets/hero-skater.webp (skater mid-kickflip, night street, neon light) -->
+              <div class="img-slot hero-photo" data-img="assets/hero-skater.webp" role="img" aria-label="Skater landing a kickflip on a neon-lit street at night">
+                <span class="slot-tag">IMG · hero-skater</span>
+              </div>
+              <div class="deck deck-hero" aria-hidden="true"><span class="deck-art art-wave"></span></div>
+              <span class="sticker sticker-red float-a">Pop guaranteed</span>
+              <span class="sticker sticker-white float-b">Free wax ✦</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <a href="#tape" class="scroll-cue" aria-label="Scroll down"><span></span></a>
     </section>
 
-    <!-- Featured Products Section -->
-    <section id="featured" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 section-title">Top Decks</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4 scroll-animation">
-                    <div class="card product-card h-100">
-                        <img src="/api/placeholder/400/300" alt="Street Deck" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">UrbanGrind Pro</h5>
-                            <p class="card-text">8.25" | 7-Ply Maple | Street-Optimized</p>
-                            <a href="#" class="btn btn-skate">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 scroll-animation">
-                    <div class="card product-card h-100">
-                        <img src="/api/placeholder/400/300" alt="Park Deck" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">AirMaster X</h5>
-                            <p class="card-text">8.5" | 8-Ply Maple | Park & Vert</p>
-                            <a href="#" class="btn btn-skate">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 scroll-animation">
-                    <div class="card product-card h-100">
-                        <img src="/api/placeholder/400/300" alt="Cruiser Deck" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">CityGlide Cruiser</h5>
-                            <p class="card-text">9" | Bamboo & Maple | Smooth Ride</p>
-                            <a href="#" class="btn btn-skate">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Caution tape marquee -->
+    <div id="tape" class="tape" aria-hidden="true">
+      <div class="tape-track">
+        <span>Free shipping over $80</span><span>✦</span><span>7-ply canadian maple</span><span>✦</span><span>30-day ride test</span><span>✦</span><span>Built by skaters</span><span>✦</span>
+        <span>Free shipping over $80</span><span>✦</span><span>7-ply canadian maple</span><span>✦</span><span>30-day ride test</span><span>✦</span><span>Built by skaters</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- Top decks -->
+    <section id="featured" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">01 / Top decks</span>
+          <h2 class="section-title">Pressed for <span class="grad">pop</span>.</h2>
+          <p class="section-sub">Three shapes, three ways to ride. Every deck is pressed, cured and hand-sanded in small batches.</p>
         </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="deck-card tilt" data-tilt data-style="street">
+              <span class="badge-hot">Best seller</span>
+              <div class="deck-stage img-slot">
+                <div class="deck"><span class="deck-art art-grind"></span></div>
+              </div>
+              <div class="deck-body">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <h3>UrbanGrind Pro</h3><span class="price">$64</span>
+                </div>
+                <ul class="chips"><li>8.25"</li><li>7-ply maple</li><li>Street</li></ul>
+                <a href="#" class="btn btn-ur w-100">Add to cart</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="deck-card tilt" data-tilt data-style="park">
+              <div class="deck-stage img-slot">
+                <div class="deck"><span class="deck-art art-air"></span></div>
+              </div>
+              <div class="deck-body">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <h3>AirMaster X</h3><span class="price">$72</span>
+                </div>
+                <ul class="chips"><li>8.5"</li><li>8-ply maple</li><li>Park &amp; vert</li></ul>
+                <a href="#" class="btn btn-ur w-100">Add to cart</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="deck-card tilt" data-tilt data-style="cruise">
+              <span class="badge-hot badge-new">New</span>
+              <div class="deck-stage img-slot">
+                <div class="deck deck-cruiser"><span class="deck-art art-glide"></span></div>
+              </div>
+              <div class="deck-body">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                  <h3>CityGlide Cruiser</h3><span class="price">$89</span>
+                </div>
+                <ul class="chips"><li>9"</li><li>Bamboo &amp; maple</li><li>Cruise</li></ul>
+                <a href="#" class="btn btn-ur w-100">Add to cart</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5 section-title">Gear Up</h2>
-            <div class="skate-grid">
-                <div class="category-card scroll-animation">
-                    <div class="category-card-content">
-                        <h3>Trucks & Wheels</h3>
-                        <p>Roll with precision</p>
-                        <a href="#" class="btn btn-skate">Shop</a>
-                    </div>
-                </div>
-                <div class="category-card scroll-animation">
-                    <div class="category-card-content">
-                        <h3>Grip & Hardware</h3>
-                        <p>Stay locked in</p>
-                        <a href="#" class="btn btn-skate">Shop</a>
-                    </div>
-                </div>
-                <div class="category-card scroll-animation">
-                    <div class="category-card-content">
-                        <h3>Safety Gear</h3>
-                        <p>Protect your ride</p>
-                        <a href="#" class="btn btn-skate">Shop</a>
-                    </div>
-                </div>
-                <div class="category-card scroll-animation">
-                    <div class="category-card-content">
-                        <h3>Skate Tools</h3>
-                        <p>Maintain your setup</p>
-                        <a href="#" class="btn btn-skate">Shop</a>
-                    </div>
-                </div>
+    <!-- Deck finder -->
+    <section id="finder" class="section section-alt">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal">
+            <span class="eyebrow">02 / Deck finder</span>
+            <h2 class="section-title">Where do you <span class="grad">ride</span>?</h2>
+            <p class="section-sub mb-4">Pick your terrain and we'll match the width, concave and wheels that fit your style.</p>
+            <div class="finder-tabs" role="tablist" aria-label="Riding style">
+              <button class="finder-tab active" role="tab" aria-selected="true" data-pick="street">Street</button>
+              <button class="finder-tab" role="tab" aria-selected="false" data-pick="park">Park</button>
+              <button class="finder-tab" role="tab" aria-selected="false" data-pick="cruise">Cruise</button>
             </div>
+          </div>
+          <div class="col-lg-7 reveal">
+            <div class="finder-card" aria-live="polite">
+              <div class="finder-meter">
+                <div class="meter"><span>Deck width</span><b id="f-width">8.25"</b><i><em id="m-width" style="--v:.45"></em></i></div>
+                <div class="meter"><span>Concave</span><b id="f-concave">Medium</b><i><em id="m-concave" style="--v:.6"></em></i></div>
+                <div class="meter"><span>Wheels</span><b id="f-wheels">52mm · 99A</b><i><em id="m-wheels" style="--v:.35"></em></i></div>
+              </div>
+              <div class="finder-pick">
+                <span class="eyebrow">Your match</span>
+                <h3 id="f-name">UrbanGrind Pro</h3>
+                <p id="f-desc">Snappy pop and a tight shape for ledges, rails and stair sets.</p>
+                <a href="#featured" class="btn btn-ur">See this deck</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container about-content">
-            <div class="row align-items-center">
-                <div class="col-lg-6 scroll-animation">
-                    <h2 class="mb-4 section-title">About UrbanRide</h2>
-                    <p>Born in the streets and raised in the parks, UrbanRide is more than just a skate shop - we're a community. Our decks are crafted by skaters who understand the perfect blend of pop, durability, and style.</p>
-                    <p>Whether you're hitting the local spot or competing in the big leagues, we've got the gear to elevate your ride. Join us in pushing the boundaries of what's possible on four wheels.</p>
-                    <a href="#" class="btn btn-skate">Our Story</a>
-                </div>
-                <div class="col-lg-6 scroll-animation">
-                    <img src="/api/placeholder/600/400" alt="Skateboarder in action" class="img-fluid rounded">
-                </div>
-            </div>
+    <!-- Gear bento -->
+    <section id="categories" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">03 / Gear up</span>
+          <h2 class="section-title">Complete the <span class="grad">setup</span>.</h2>
         </div>
+        <div class="bento">
+          <a href="#" class="bento-item b-wide reveal">
+            <!-- IMAGE SLOT: assets/gear-trucks.webp -->
+            <div class="img-slot bento-img" data-img="assets/gear-trucks.webp"><span class="slot-tag">IMG · gear-trucks</span></div>
+            <div class="bento-copy">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M3 11h18M8 11l2-4h4l2 4"/></svg>
+              <h3>Trucks &amp; Wheels</h3><p>Roll with precision</p>
+            </div>
+            <span class="bento-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#" class="bento-item reveal">
+            <div class="bento-copy">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+              <h3>Grip &amp; Hardware</h3><p>Stay locked in</p>
+            </div>
+            <span class="bento-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#" class="bento-item reveal">
+            <div class="bento-copy">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14a8 8 0 0116 0v3H4z"/><path d="M8 17v2M16 17v2M12 6v3"/></svg>
+              <h3>Safety Gear</h3><p>Protect your ride</p>
+            </div>
+            <span class="bento-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#" class="bento-item b-wide b-accent reveal">
+            <!-- IMAGE SLOT: assets/gear-tools.webp -->
+            <div class="img-slot bento-img" data-img="assets/gear-tools.webp"><span class="slot-tag">IMG · gear-tools</span></div>
+            <div class="bento-copy">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l4 4-9 9H5v-4z"/><path d="M13 7l4 4"/></svg>
+              <h3>Skate Tools</h3><p>Maintain your setup</p>
+            </div>
+            <span class="bento-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 UrbanRide Skateboards. All rights reserved.</p>
-    </footer>
+    <!-- About / crew -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 order-lg-2 reveal">
+            <span class="eyebrow">04 / The crew</span>
+            <h2 class="section-title">Born in the <span class="grad">streets</span>.</h2>
+            <p class="section-sub">Raised in the parks, UrbanRide is more than a skate shop, we're a community. Our decks are crafted by skaters who understand the perfect blend of pop, durability and style.</p>
+            <p class="section-sub">Whether you're hitting the local spot or competing in the big leagues, we've got the gear to elevate your ride.</p>
+            <div class="crew-quote">
+              <p>"Best pop I've felt in years. The AirMaster just doesn't die."</p>
+              <span>Maya R. · team rider</span>
+            </div>
+            <a href="#" class="btn btn-ur mt-4">Our story</a>
+          </div>
+          <div class="col-lg-6 order-lg-1 reveal">
+            <div class="about-visual">
+              <!-- IMAGE SLOT: assets/about-crew.webp (skate crew at a concrete park, golden hour) -->
+              <div class="img-slot about-photo" data-img="assets/about-crew.webp" role="img" aria-label="The UrbanRide crew at a concrete skatepark at golden hour">
+                <span class="slot-tag">IMG · about-crew</span>
+              </div>
+              <div class="about-badge"><b class="count" data-to="250" data-suffix="+">0</b><span>local spots mapped</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Simple scroll animation
-        function checkScroll() {
-            var elements = document.querySelectorAll('.scroll-animation');
-            elements.forEach(el => {
-                var rect = el.getBoundingClientRect();
-                var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                if (rect.top <= windowHeight * 0.8) {
-                    el.classList.add('active');
-                }
-            });
-        }
+    <!-- Join CTA -->
+    <section class="section join">
+      <div class="container">
+        <div class="join-card reveal">
+          <div class="join-bg" aria-hidden="true"></div>
+          <div class="row align-items-center g-4 position-relative">
+            <div class="col-lg-6">
+              <h2 class="section-title mb-2">Join the <span class="outline-dark">crew</span>.</h2>
+              <p class="mb-0">Drops, spot sessions and 10% off your first deck.</p>
+            </div>
+            <div class="col-lg-6">
+              <form class="join-form" onsubmit="event.preventDefault(); this.classList.add('sent');">
+                <label for="join-email" class="visually-hidden">Email address</label>
+                <input id="join-email" type="email" required placeholder="you@email.com" autocomplete="email">
+                <button type="submit" class="btn btn-dark-ur">Get 10% off</button>
+                <span class="join-ok" role="status">You're in. See you at the spot ✦</span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
-    </script>
+  <!-- Free template badge -->
+  <aside class="free-pill" aria-label="About this template">
+    <span class="free-tag">Free template</span>
+    <a href="https://github.com/EduGuate/UrbanSkateShopTheme" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://neuralcodelab.com" target="_blank" rel="noopener">neuralcodelab.com ↗</a>
+  </aside>
+
+  <footer class="ur-footer">
+    <div class="container">
+      <div class="footer-mega" aria-hidden="true">URBANRIDE</div>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0">&copy; 2026 UrbanRide Skateboards · <span class="free-tag">Free template</span> by <a href="https://neuralcodelab.com" target="_blank" rel="noopener">Neural Code Lab</a> · <a href="https://github.com/EduGuate/UrbanSkateShopTheme" target="_blank" rel="noopener">Source on GitHub</a></p>
+        <ul class="footer-links">
+          <li><a href="#featured">Decks</a></li><li><a href="#categories">Gear</a></li><li><a href="#about">Crew</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
